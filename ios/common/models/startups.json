@@ -1,0 +1,67 @@
+{
+  "name": "startups",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mixins": {
+    "TimeStamp": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "industry": {
+      "type": "string",
+      "required": true
+    },
+    "foundation": {
+      "type": "date",
+      "required": true
+    },
+    "closure": {
+      "type": "date"
+    },
+    "story": {
+      "type": "string",
+      "required": true
+    },
+    "likes": {
+      "type": "number",
+      "default": "0"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true,
+      "default": "bronze"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "comments": {
+      "type": "hasMany",
+      "model": "comments",
+      "foreignKey": ""
+    },
+    "usuarios": {
+      "type": "hasMany",
+      "model": "usuarios",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

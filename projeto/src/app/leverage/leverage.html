@@ -1,0 +1,70 @@
+<div id="leverage">
+
+	<!-- JUMBOTRON -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Leverage Your Money</h1>
+  						<p class="lead">Nesta seção estão as histórias de Startups que estão dando certo. Que tal apoiar finaceiramente estas ideias e fazer o seu dinheiro render também? Participe desse jogo de Ganha-Ganha!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CARDS -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-4" ng-repeat="item in startupList | filter: greaterThan('likes', 5) | orderBy:'-likes'">
+					<div class="card text-xs-center">
+					  	<div class="card-header">
+					  	  	{{$index + 1}}
+					  	</div>
+					  	<div class="card-block">
+					  	  	<h4 class="card-title">{{item.name}}</h4>
+					  	  	<p class="card-text truncate">{{item.description}}</p>
+					  	  	<a ui-sref="app.discoverdetail({id:item.id})" class="btn btn-primary"><i class="icon-eye"></i> Detalhe</a>
+					  	  	<a ng-click="openInvestModal()" class="btn btn-warning"><i class="icon-diamond"></i> Investir</a>
+					  	</div>
+					  	<div class="card-footer text-muted">
+					  	  	<b>{{item.likes}}</b> curtidas
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div ng-controller="InvestCtrl">
+    <script type="text/ng-template" id="invest.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Make Real Money</h3>
+        </div>
+			<form>
+        <div class="modal-body" id="modal-body">
+					<div class="form-group">
+				     <label for="txtAmmount">Ammount</label>
+				     <input type="text" class="form-control" id="txtAmmount" ng-model="loginInfo.login" placeholder="Ammount">
+				   </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="Confirm()">Confirm</button>
+            <button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+        </div>
+			</form>
+    </script>
+</div>
+
+<style>
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

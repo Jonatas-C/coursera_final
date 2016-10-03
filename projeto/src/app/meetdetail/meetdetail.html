@@ -1,0 +1,31 @@
+<div id="meet">
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Who are you?</h1>
+  						<p class="lead">Encontre pessoas que tenham histórias legais para contar, ou que compartilham de ideias similares e prepare-se para muita inovação, e trabalho.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<p><img ng-src="{{meet.image}}" alt="{{meet.name}}" title="{{meet.name}}" /></p>
+					</div>
+					<div class="col-sm-12 col-md-8 col-lg-8">
+						<p><label><b>Nome:</b></label> <label>{{meet.name}}</label></p>
+						<p><label><b>Interesse:</b></label> <label>{{meet.interest}}</label></p>
+						<p><label><b>Cargo:</b></label> <label>{{meet.position}}</label></p>
+						<p><label><b>Cidade:</b></label> <label>{{meet.city}}</label></p>
+						<a ui-sref="app.meetdetail({id:item._id})" class="btn btn-warning"><i class="icon-people" 
+					  	  	ng-show="!main.login.id"></i>Adicionar</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

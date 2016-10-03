@@ -1,0 +1,75 @@
+<div id="share">
+
+	
+	<!-- JUMBOTRON -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Share your Story</h1>
+  						<p class="lead">Conte sobre a sua experiência. Vamos ser criativos juntos.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row row-content">
+		        <div class="col-xs-12">
+		            <h3>Conte a todos sobre o seu sucesso</h3> 
+		        </div>
+		        <div class="col-xs-12 col-sm-9" ng-controller="ShareController">
+					<form class="form-horizontal" name="storyForm" ng-submit="sendStory()">
+				  		<div class="form-group">
+							<label for="name">Nome</label>
+							<input type="text" class="form-control" id="name" ng-model="Story.name" name="name" placeholder="Nome da Startup">
+						</div>
+				  		<div class="form-group">
+				    		<label for="description">Descrição</label>
+				    		<textarea class="form-control" rows="2" id="description" ng-model="Story.description" description="description" placeholder="Descrição"></textarea>
+				  		</div>
+				  		<div class="form-group">
+				  			<label for="industry">Indústria</label>
+				    		<select class="form-control" ng-model="Story.industry">
+		  						<option value"Educação">Educação</option>
+		  						<option value"Saúde">Saúde</option>
+		  						<option value"Alimentação">Alimentação</option>
+		  						<option value"Turismo">Turismo</option>
+		  						<option value"Redes Sociais">Redes Sociais</option>
+		  						<option value"Tecnologia">Tecnologia</option>
+		  						<option value"Finanças">Finanças</option>
+		  						<option value"Automobilismo">Automobilismo</option>
+							</select>
+				  		</div>
+				  		<div class="form-group">
+				    		<label for="story">História</label>
+				    		<textarea class="form-control" rows="6" id="story" ng-model="Story.story" story="story" placeholder="História da Startup"></textarea>
+				  		</div>
+				  		<div class="form-group">
+		    				<label for="foundation">Fundação</label>
+		    				<input type="date" class="form-control" id="foundation" ng-model="Story.foundation" foundation="foundation" placeholder="Data de Fundação">
+		  				</div>
+		  				<div class="form-group">
+		    				<label for="clousure">Encerramento</label>
+		    				<input type="date" class="form-control" id="clousure" ng-model="Story.closure" clousure="clousure" placeholder="Data de Encerramento">
+		  				</div>
+		  				<div class="form-group">
+							<label for="city">Cidade</label>
+							<input type="text" class="form-control" id="city" ng-model="Story.city" city="city" placeholder="Cidade">
+						</div>
+				  		<!--<div class="form-group">
+				    		<label for="exampleInputFile">Imagem</label>
+				    		<input type="file" id="exampleInputFile">
+				  		</div>-->
+				  			<button type="submit" class="btn btn-default" ng-click="save()">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

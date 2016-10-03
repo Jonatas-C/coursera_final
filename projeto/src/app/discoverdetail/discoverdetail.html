@@ -1,0 +1,63 @@
+<div id="discoverdetail">
+
+	<!-- JUMBOTRON -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Show and Tell </h1>
+  						<p class="lead">Descubra ideias inspiradoras de Startups que tiveram sucesso em menor ou menor escala. Inspire-se e mãos à obra.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<p><img ng-src="{{discover.image}}" alt="{{discover.name}}" title="{{discover.name}}" /></p>
+					</div>
+					<div class="col-sm-12 col-md-8 col-lg-8">
+						<p><label><b>Nome:</b></label> <label>{{discover.name}}</label></p>
+						<p><label><b>Descrição:</b></label> <label>{{discover.description}}</label></p>
+						<p><label><b>Indústria:</b></label> <label>{{discover.industry}}</label></p>
+						<p><label><b>Fundação:</b></label> <label>{{discover.foundation | date:'dd, MMM. yyyy'}}</label></p>
+						<p><label><b>Encerramento:</b></label> <label>{{discover.closure | date:'dd, MMM. yyyy'}}</label></p>
+						<p><label><b>História:</b></label> <label>{{discover.story}}</label></p>
+						<p><label><b>Cidade:</b></label> <label>{{discover.city}}</label></p>
+						<p><label><b><i class="icon-like"></i>Curtidas:</b></label> <label ng-bind="discover.likes"></label></p>
+
+						<button class="btn btn-warning" type="button" ng-click="Like()"><i class="icon-like"></i> Like</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-9 col-xs-offset-1">
+              <blockquote ng-repeat="item in ">
+                <p>{{comment.message}}</p>
+                <footer>{{comment.author}}, {{comment.date | date:'MMM. dd, yyyy'}}</footer>
+              </blockquote>
+        </div>
+        <div class="col-xs-9 col-xs-offset-1" ng-controller="CommentController">
+              <blockquote>
+                <p>{{comment.comment}}</p>
+                <footer>{{comment.author}},</footer>
+              </blockquote>
+              <form class="form-horizontal" name="commentForm" ng-submit="sendComment()">
+                    <div class="form-group">
+                        <label for="comment" class="col-sm-2 control-label">Comentários</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="comment" name="comment" rows="2" ng-model="comment.message"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                             <button type="submit" class="btn btn-primary">Comment</button>
+                        </div>
+                    </div>
+              </form>
+        </div>
+	</div>
+</div>

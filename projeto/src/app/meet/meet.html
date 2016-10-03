@@ -1,0 +1,42 @@
+<div id="meet">
+
+	<!-- JUMBOTRON -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Meet People</h1>
+  						<p class="lead">Encontre pessoas que tenham histórias legais para contar, ou que compartilham de ideias similares e prepare-se para muita inovação, e trabalho.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CARDS -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-4" ng-repeat="item in meetList">
+					<div class="card">
+					  	<img ng-src="{{item.image}}" class="img-rounded" width="127" height="127">
+					  	<div class="card-block">
+					  	  	<h4 class="card-title truncate">{{item.name}}</h4>
+					  	  	<p class="card-text">{{item.interest}}</p>
+					  	  	<a ui-sref="app.meetdetail({id:item.id})" class="btn btn-primary"><i class="icon-eye"></i> Detalhe</a>
+					  	</div>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

@@ -1,0 +1,26 @@
+<div id="account">
+	
+	<div class="box component-space">
+		<div class="box-header">
+			<h2>Your stuff</h2>
+		</div>
+		<div class="row">
+			<div ng-controller="TabsParentController">
+	    		<tabset>
+			        <tab ng-repeat="workspace in workspaces"
+			             heading="{{workspace.name}}"
+			             active=workspace.active>
+			            <div ng-controller="TabsChildController" 
+			                 ng-init="workspace=workspace">
+			                <div>
+			                    {{workspace.id}} : {{ workspace.name}}
+			                </div>
+			                <input type="text" ng-model="workspace.name"/>
+			            </div>     
+			        </tab>
+	    		</tabset>
+			</div>
+		</div>
+	</div>
+
+</div>

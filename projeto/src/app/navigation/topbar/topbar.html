@@ -1,0 +1,115 @@
+<nav class="navbar navbar-dark navbar-fixed-top bg-inverse">
+	<button type="button" class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	</button>
+	<a class="navbar-brand text-uppercase" href ui-sref="app.home">Ideas on Start.Up</a>
+	<div id="navbar">
+		<nav class="nav navbar-nav pull-right">
+			<div class="btn-group" ng-show="main.login.id !=''">
+				<a class="text-uppercase" data-toggle="dropdown">
+					Luke Skywalker
+					<img class="avatar menu-img" src="https://pbs.twimg.com/profile_images/726100805/4394612844_0b36f6a9db_o.jpg">
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href ui-sref="app.account">Account</a>
+					<a class="dropdown-item" ng-click="Logout()">Logout</a>
+				</div>
+			</div>
+			<div class="btn-group" ng-show="main.login.id ==''">
+				<ul class="list-unstyled list-inline">
+						<li><a class="text-uppercase" ng-click="openLoginModal()">Login</a></li>
+						<li><a class="text-uppercase" ng-click="openRegisterModal()" >Register</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</nav>
+
+<div ng-controller="LoginCtrl">
+    <script type="text/ng-template" id="login.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Login</h3>
+        </div>
+				<form>
+        <div class="modal-body" id="modal-body">
+					<div class="form-group">
+				     <label for="txtLogin">Login</label>
+				     <input type="text" class="form-control" id="txtLogin" ng-model="loginInfo.login" placeholder="Login">
+				   </div>
+				   <div class="form-group">
+				     <label for="txtSenha">Senha</label>
+				     <input type="password" class="form-control" id="txtSenha" ng-model="loginInfo.senha" placeholder="Senha">
+				   </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="Login()">Access</button>
+            <button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+        </div>
+			</form>
+    </script>
+</div>
+
+<div ng-controller="RegisterCtrl">
+    <script type="text/ng-template" id="register.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">Register</h3>
+        </div>
+				<form>
+        <div class="modal-body" id="modal-body">
+					<div class="form-group">
+				     <label for="txtNome">Nome</label>
+				     <input type="text" class="form-control" id="txtNome" ng-model="registerInfo.name" placeholder="Nome">
+				   </div>
+				   <div class="form-group">
+				  			<label for="interest">Interesse</label>
+				    		<select class="form-control" ng-model="registerInfo.interest">
+		  						<option value"Educação">Educação</option>
+		  						<option value"Saúde">Saúde</option>
+		  						<option value"Alimentação">Alimentação</option>
+		  						<option value"Turismo">Turismo</option>
+		  						<option value"Redes Sociais">Redes Sociais</option>
+		  						<option value"Tecnologia">Tecnologia</option>
+		  						<option value"Finanças">Finanças</option>
+		  						<option value"Automobilismo">Automobilismo</option>
+							</select>
+				  	</div>
+				  	<div class="form-group">
+				  			<label for="position">Cargo</label>
+				    		<select class="form-control" ng-model="registerInfo.position">
+		  						<option value"Estudante">Estudante</option>
+		  						<option value"Analista">Analista</option>
+		  						<option value"Consultor">Consultor</option>
+		  						<option value"Investidor">Investidor</option>
+		  						<option value"Empreendedor">Empreendedor</option>
+		  						<option value"CIO">CIO</option>
+		  						<option value"CFO">CFO</option>
+		  						<option value"CEO">CEO</option>		  						
+							</select>
+				  	</div>	  	
+				    <div class="form-group">
+				    	<label for="txtCidade">Cidade</label>
+				     	<input type="text" class="form-control" id="txtCidade" ng-model="registerInfo.city" placeholder="Cidade">
+				   	</div>
+				   	<div class="form-group">
+				     	<label for="txtEmail">Email</label>
+				     	<input type="email" class="form-control" id="txtEmail" ng-model="registerInfo.email" placeholder="Email">
+				   	</div>
+					<div class="form-group">
+				     <label for="txtLogin">Login</label>
+				     <input type="text" class="form-control" id="txtLogin" ng-model="registerInfo.username" placeholder="Login">
+				   </div>
+				   <div class="form-group">
+				     <label for="txtSenha">Senha</label>
+				     <input type="password" class="form-control" id="txtSenha" ng-model="registerInfo.password" placeholder="Senha">
+				   </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="Register()">Confirm</button>
+            <button class="btn btn-warning" type="button" ng-click="Cancel()">Cancel</button>
+        </div>
+			</form>
+    </script>
+</div>

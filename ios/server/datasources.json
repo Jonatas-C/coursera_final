@@ -1,0 +1,26 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "MongoDB": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "ios",
+    "password": "",
+    "name": "MongoDB",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "MongoDB2": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "ios2",
+    "password": "",
+    "name": "MongoDB2",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

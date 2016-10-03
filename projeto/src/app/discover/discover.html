@@ -1,0 +1,45 @@
+<div id="discover">
+
+	<!-- JUMBOTRON -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="jumbotron">
+  						<h1 class="display-3">Discover New Ideas</h1>
+  						<p class="lead">Descubra ideias inspiradoras de Startups que tiveram sucesso em menor ou menor escala. Inspire-se e mãos à obra.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CARDS -->
+	<div class="box component-space">
+		<div class="box-body">
+			<div class="row">
+				
+				<div class="col-sm-4" ng-repeat="item in startupList">
+					<div class="card">
+					  	<img class="card-img-fluid" ng-src="{{item.image}}" alt="318x180" style="max-heigth:80px!important;">
+					  	<div class="card-block">
+					  	  	<h4 class="card-title">{{item.name}}</h4>
+					  	  	<p class="card-text truncate">{{item.description}}</p>
+					  	  	<a ui-sref="app.discoverdetail({id:item.id})" class="btn btn-primary">Mais Detalhes</a>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<style>
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>

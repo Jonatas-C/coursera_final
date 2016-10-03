@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "MongoDB2",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "MongoDB2",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "MongoDB2",
+    "public": false
+  },
+  "comments": {
+    "dataSource": "MongoDB2",
+    "public": true
+  },
+  "financing": {
+    "dataSource": "MongoDB2",
+    "public": true
+  },
+  "usuarios": {
+    "dataSource": "MongoDB2",
+    "public": true
+  },
+  "startups": {
+    "dataSource": "MongoDB2",
+    "public": true
+  },
+  "DEMO_Model": {
+    "dataSource": "db",
+    "public": true
+  }
+}
